@@ -1,9 +1,9 @@
 const pool = require('../conection/conexao')
 
 function nome(req, res, next) {
-    const usuario = req.body
+    const { nome } = req.body
 
-    if (!usuario.nome) {
+    if (!nome) {
         return res.status(400).json({ mensagem: 'o campo nome é obrigatório.' })
     }
 
